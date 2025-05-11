@@ -59,7 +59,7 @@ const LatestNews = () => {
 
   return (
     <div className="bg-gray-100 w-full py-6 sm:py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="kontainer px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 text-gray-800">Latest News</h2>
         <p className="text-center text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
           Stay updated with our latest news and insights.

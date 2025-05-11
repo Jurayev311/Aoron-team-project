@@ -296,7 +296,7 @@ Xabar: ${formData.message}
 
   return (
     <div className="bg-gray-100 w-full min-h-screen py-6 sm:py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="kontainer px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Contact Us</h1>
         <p className="text-center text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base">
           Get in touch with us for any questions about our products or services.
