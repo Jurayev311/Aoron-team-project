@@ -8,6 +8,7 @@ import News from '../pages/news/News'
 import Contact from '../pages/contact/Contact'
 import Cart from '../pages/cart/Cart'
 import AboutNews from '../components/newsComponent/AboutNews'
+import ProductDetail from '../pages/productDetail/ProductDetail'
 
 
 const AppRoutes = () => {
@@ -22,6 +23,7 @@ const AppRoutes = () => {
           <Route path='contact' element={<Contact />} />
           <Route path='cart' element={<Cart />} />
           <Route path="about-news/:id" element={<AboutNews />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Route>
       </Routes>
     </>

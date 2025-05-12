@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spin, Empty } from 'antd';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -42,15 +43,17 @@ const Products = () => {
                   className="rounded-md p-4 bg-white transition text-start overflow-hidden"
                 >
                   <div className='overflow-hidden'>
-                    <img
-                    src={`https://testaoron.limsa.uz/${item?.images}`}
-                    alt={item?.title_en}
-                    className="w-full h-[424px] object-contain mb-3 hover:scale-[180%] duration-75 cursor-pointer"
-                  />
+                    <Link to={`/product/${item.id}`}>
+                      <img
+                        src={`https://testaoron.limsa.uz/${item?.images}`}
+                        alt={item?.title_en}
+                        className="w-full h-[424px] object-contain mb-3 hover:scale-[180%] duration-75 cursor-pointer"
+                      />
+                    </Link>
                   </div>
                   <div className='flex justify-between'>
                     <h3 className="text-md font-semibold">{item?.title_en}</h3>
-                  <p className="text-green-600 font-bold">${item?.price}</p>
+                    <p className="text-green-600 font-bold">${item?.price}</p>
                   </div>
                   <p className="text-gray-600 text-sm mt-1 line-clamp-2">
                     {item?.description_en}
