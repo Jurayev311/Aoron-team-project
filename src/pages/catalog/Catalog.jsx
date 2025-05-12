@@ -1,8 +1,11 @@
 import React from 'react'
+import OurCollection from '../../components/catalogComponent/OurCollection'
 
 const Catalog = () => {
   return (
-    <div className='pt-[100px]'>Catalog</div>
+    <div className='pt-[100px]'>
+      <OurCollection/>
+    </div>
   )
 }
 
