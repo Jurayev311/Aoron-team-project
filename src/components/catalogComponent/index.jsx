@@ -135,7 +135,7 @@ const ProductsCatalog = () => {
             </div>
           </div>
 
-          <button onClick={clearFilters} className="text-red-500 text-sm underline mt-4">Clear filters</button>
+          <button onClick={clearFilters} className="text-red-500 text-sm underline mt-4 cursor-pointer">Clear filters</button>
         </div>
 
         <div className="md:w-3/4">
