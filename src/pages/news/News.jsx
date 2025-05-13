@@ -1,8 +1,9 @@
 import React from 'react'
+import LatestNews from '../../components/newsComponent/LatestNews'
 
 const News = () => {
   return (
-    <div className='pt-[100px]'>News</div>
+    <div className='pt-[78px]'><LatestNews/></div>
   )
 }
 

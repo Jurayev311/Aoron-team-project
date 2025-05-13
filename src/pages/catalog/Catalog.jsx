@@ -1,10 +1,10 @@
 import React from 'react'
-import OurCollection from '../../components/catalogComponent/OurCollection'
+import ProductsCatalog from '../../components/catalogComponent'
 
 const Catalog = () => {
   return (
     <div className='pt-[100px]'>
-      <OurCollection/>
+      <ProductsCatalog/>
     </div>
   )
 }
