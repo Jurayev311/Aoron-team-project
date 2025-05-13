@@ -38,7 +38,7 @@ const Header = () => {
     }
   }, [menuOpen])
 
-  const handleLanguageChange = (lang) => {
+  const handleLanguageChange = (lang, closeMenu = false) => {
     i18n.changeLanguage(lang);
     localStorage.setItem('i18nextLng', lang); 
     document.body.classList.remove('bg-uz', 'bg-ru', 'bg-en'); 
@@ -49,6 +49,7 @@ const Header = () => {
     } else if (lang === 'en') {
       document.body.classList.add('bg-en'); 
     }
+    if (closeMenu) setMenuOpen(false);
   };
 
   useEffect(() => {
@@ -117,19 +118,19 @@ const Header = () => {
           <div className="flex items-center gap-3 mt-4 text-sm">
             <span 
               className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'en' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
-              onClick={() => handleLanguageChange('en')}
+              onClick={() => handleLanguageChange('en', true)}
             >
               EN
             </span>
             <span 
               className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'ru' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
-              onClick={() => handleLanguageChange('ru')}
+              onClick={() => handleLanguageChange('ru', true)}
             >
               RU
             </span>
             <span 
               className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'uz' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
-              onClick={() => handleLanguageChange('uz')}
+              onClick={() => handleLanguageChange('uz', true)}
             >
               UZ
             </span>

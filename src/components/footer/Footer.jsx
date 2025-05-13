@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaTwitter, FaArrowRight  } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/footer-logo.svg';
 import { useTranslation } from 'react-i18next';
 
@@ -7,7 +8,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gray-50 text-gray-700 py-12 px-4 sm:px-6 lg:px-8 mt-[20px]">
+    <footer className="bg-gray-50 text-gray-700 py-12 px-4 sm:px-6 lg:px-8 pt-[20px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <img src={logo} alt="Aoron Logo" className="mb-4" />
@@ -30,20 +31,52 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">{t('footer.shop')}</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.viewAll')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.tshirts')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.shorts')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.suits')}</a></li>
+            <li>
+              <Link to="/catalog" className="hover:text-[#000000da]">
+                {t('footer.viewAll')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" className="hover:text-[#000000da]">
+                {t('footer.tshirts')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" className="hover:text-[#000000da]">
+                {t('footer.shorts')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" className="hover:text-[#000000da]">
+                {t('footer.suits')}
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold mb-4">{t('footer.company')}</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.about')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.contact')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.privacy')}</a></li>
-            <li><a href="#" className="hover:text-[#000000da]">{t('footer.delivery')}</a></li>
+            <li>
+              <Link to="/about" className="hover:text-[#000000da]">
+                {t('footer.about')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-[#000000da]">
+                {t('footer.contact')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/news" className="hover:text-[#000000da]">
+                {t('footer.privacy')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms" className="hover:text-[#000000da]">
+                {t('footer.delivery')}
+              </Link>
+            </li>
           </ul>
         </div>
 

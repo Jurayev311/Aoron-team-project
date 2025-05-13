@@ -10,6 +10,7 @@ import Cart from '../pages/cart/Cart'
 import AboutNews from '../components/newsComponent/AboutNews'
 import ProductDetail from '../pages/productDetail/ProductDetail'
 import NotFound from '../pages/not-found/NotFound'
+import Terms from '../pages/terms/Terms'
 
 
 const AppRoutes = () => {
@@ -25,6 +26,7 @@ const AppRoutes = () => {
           <Route path='cart' element={<Cart />} />
           <Route path="about-news/:id" element={<AboutNews />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
