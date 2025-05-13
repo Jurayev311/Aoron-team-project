@@ -42,7 +42,7 @@ const ProductDetail = () => {
 
     if (!product) {
         return (
-            <div className="flex items-center justify-center h-screen text-black">
+            <div className="flex items-center justify-center min-h-screen text-black">
                 <Spin size="large" tip="Yuklanmoqda..." />
             </div>
         )
@@ -51,29 +51,29 @@ const ProductDetail = () => {
     return (
         <>
             <section className='kontainer'>
-                <div className=" pt-[100px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="pt-[80px] md:pt-[100px] mx-auto px-2 sm:px-4 md:px-6 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     <div>
                         <img
                             src={`https://testaoron.limsa.uz/${product?.images[0]}`}
                             alt={product.title_en}
-                            className="w-full h-[690px] object-cover rounded-lg"
+                            className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[690px] object-cover rounded-lg transition-all duration-300"
                         />
-                        <div className="flex gap-2 mt-4">
+                        <div className="flex gap-2 mt-4 overflow-x-auto">
                             {product.images.map((img, i) => (
                                 <img
                                     key={i}
                                     src={`https://testaoron.limsa.uz/${img}`}
-                                    className="w-16 h-16 object-cover border rounded cursor-pointer"
+                                    className="w-14 h-14 sm:w-16 sm:h-16 object-cover border rounded cursor-pointer flex-shrink-0"
                                     alt="Thumbnail"
                                 />
                             ))}
                         </div>
                     </div>
 
-                    <div className="space-y-5">
-                        <h2 className="text-3xl font-semibold">{product.title_ru}</h2>
-                        <p className="text-2xl font-bold text-green-600">${product.price}</p>
-                        <p className="text-gray-700">{product.description_ru}</p>
+                    <div className="space-y-4 md:space-y-5">
+                        <h2 className="text-2xl md:text-3xl font-semibold">{product.title_ru}</h2>
+                        <p className="text-xl md:text-2xl font-bold text-green-600">${product.price}</p>
+                        <p className="text-gray-700 text-base md:text-lg">{product.description_ru}</p>
 
                         {product.materials?.length > 0 && (
                             <p className="text-sm text-gray-600">
@@ -97,7 +97,7 @@ const ProductDetail = () => {
                             </select>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap items-center gap-3">
                             <span className="font-medium">Цвет:</span>
                             {product.colors.map((color) => (
                                 <div
@@ -110,13 +110,12 @@ const ProductDetail = () => {
                                     {selectedColor === color.id && <span className="block w-2 h-2 bg-white rounded-full" />}
                                 </div>
                             ))}
-                            {/* Rang nomini ko'rsatish */}
                             <span className="ml-2 text-sm text-gray-600">
                                 {product.colors.find(c => c.id === selectedColor)?.color_ru}
                             </span>
                         </div>
 
-                        <div className="flex items-center gap-4">
+                        <div className="flex flex-wrap items-center gap-4">
                             <span className="font-medium">Количество:</span>
                             <div className="flex items-center border border-gray-300 rounded">
                                 <button
@@ -143,7 +142,7 @@ const ProductDetail = () => {
 
                         <div className="border-t pt-6 mt-6">
                             <h3 className="text-lg font-semibold mb-2">Product Details</h3>
-                            <ul className="list-disc list-inside text-gray-700 space-y-1">
+                            <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm md:text-base">
                                 <li>
                                     This contains suits {product.materials[0]?.name || ''}{' '}
                                     {product.materials[0]?.value || ''}%, ensuring comfort and durability.
@@ -157,8 +156,8 @@ const ProductDetail = () => {
                     </div>
                 </div>
 
-                <div className='mt-[100px]'>
-                    <h2 className='text-3xl font-light mb-[10px]'>You may also like</h2>
+                <div className='mt-16 md:mt-[100px]'>
+                    <h2 className='text-2xl md:text-3xl font-light mb-2 md:mb-[10px]'>You may also like</h2>
                         <Products />
                 </div>
             </section>
