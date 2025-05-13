@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getFaqs } from '../aboutComponent/Api';
+import { useTranslation } from 'react-i18next';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -217,6 +218,8 @@ const ContactPage = () => {
     { code: 'zw', flag: 'https://flagcdn.com/w20/zw.png', dialCode: '+263', name: 'Zimbabwe' },
   ];
 
+  const { t } = useTranslation();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -297,21 +300,21 @@ Xabar: ${formData.message}
   return (
     <div className="bg-gray-100 w-full min-h-screen py-6 sm:py-8 lg:py-10">
       <div className="kontainer px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Contact Us</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">{t('contact.title')}</h1>
         <p className="text-center text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base">
-          Get in touch with us for any questions about our products or services.
+          {t('contact.subtitle')}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-6 sm:gap-8 bg-white py-6 sm:py-8 px-4 sm:px-6 lg:px-10 rounded-lg">
           <div className="bg-white p-4 sm:p-6">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Contact Information</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">{t('contact.info')}</h2>
             <div className="space-y-4 sm:space-y-5 text-sm sm:text-[15px]">
               <p className="flex items-center text-gray-600">
                 <svg className="w-8 h-8 sm:w-9 sm:h-9 mr-3 sm:mr-4 border-gray-200 rounded-2xl bg-gray-200 p-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
                 </svg>
                 <span>
-                  <span className="text-black">Email</span><br />
+                  <span className="text-black">{t('contact.email')}</span><br />
                   msmukhlisss@gmail.com
                 </span>
               </p>
@@ -320,7 +323,7 @@ Xabar: ${formData.message}
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
                 <span>
-                  <span className="text-black">Phone</span><br />
+                  <span className="text-black">{t('contact.phone')}</span><br />
                   +998887666051<br />
                   Mon-Fri, 9am-6pm
                 </span>
@@ -330,7 +333,7 @@ Xabar: ${formData.message}
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
                 <span>
-                  <span className="text-black">Address</span><br />
+                  <span className="text-black">{t('contact.address')}</span><br />
                   Toshkent, Yunusobod
                 </span>
               </p>
@@ -338,11 +341,11 @@ Xabar: ${formData.message}
           </div>
 
           <div className="bg-white p-4 sm:p-6 rounded-lg">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Contact Form</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">{t('contact.form')}</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.name')}</label>
                   <input
                     type="text"
                     name="name"
@@ -354,7 +357,7 @@ Xabar: ${formData.message}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.email')}</label>
                   <input
                     type="email"
                     name="email"
@@ -367,7 +370,7 @@ Xabar: ${formData.message}
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.phone')}</label>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0">
                   <div className="flex items-center">
                     <select
@@ -402,7 +405,7 @@ Xabar: ${formData.message}
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact.message')}</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -440,20 +443,20 @@ Xabar: ${formData.message}
                           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                         ></path>
                       </svg>
-                      Sending...
+                      {t('contact.sending')}
                     </>
                   ) : (
-                    'Send Message'
+                    t('contact.send')
                   )}
                 </button>
               </div>
-              {success && <p className="text-green-500 text-center text-sm sm:text-base">Message sent successfully!</p>}
+              {success && <p className="text-green-500 text-center text-sm sm:text-base">{t('contact.success')}</p>}
             </form>
           </div>
         </div>
 
         <div className="mt-8 sm:mt-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">{t('contact.faq')}</h2>
           {loadingFaqs ? (
             <div className="flex justify-center items-center py-8 sm:py-10">
               <div className="flex space-x-3">
@@ -472,13 +475,13 @@ Xabar: ${formData.message}
               </div>
             </div>
           ) : errorFaqs ? (
-            <div className="text-center py-8 sm:py-10 text-red-500 text-sm sm:text-base">{errorFaqs}</div>
+            <div className="text-center py-8 sm:py-10 text-red-500 text-sm sm:text-base">{t('contact.faqError')}</div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {faqs.map((faq) => (
                 <div key={faq.id} className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">{faq.question_en}</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">{faq.answer_en}</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">{faq[`question_${i18n.language}`] || faq.question_en}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">{faq[`answer_${i18n.language}`] || faq.answer_en}</p>
                 </div>
               ))}
             </div>

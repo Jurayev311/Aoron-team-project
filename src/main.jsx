@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
+import './i18n.jsx'
 
 const themeConfig = {
   token: {

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getNews, imageUrl } from '../aboutComponent/Api';
+import { useTranslation } from 'react-i18next';
 
 const LatestNews = () => {
   const [newsItems, setNewsItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -60,9 +62,9 @@ const LatestNews = () => {
   return (
     <div className="bg-gray-100 w-full py-6 sm:py-8 lg:py-10">
       <div className="kontainer px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 text-gray-800">Latest News</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 text-gray-800">{t('news.latest')}</h2>
         <p className="text-center text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
-          Stay updated with our latest news and insights.
+          {t('news.stayUpdated')}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {newsItems.map((item) => (

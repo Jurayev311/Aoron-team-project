@@ -1,9 +1,11 @@
 import React from 'react'
 import { Result, Button } from 'antd'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const NotFound = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation();
 
   return (
     <section
@@ -21,7 +23,7 @@ const NotFound = () => {
           title={<span style={{ fontSize: '40px' }}>404</span>}
           subTitle={
             <span style={{ fontSize: '16px' }}>
-              Kechirasiz, siz izlagan sahifa mavjud emas.
+              {t('notfound.subtitle', 'Kechirasiz, siz izlagan sahifa mavjud emas.')}
             </span>
           }
           extra={
@@ -32,7 +34,7 @@ const NotFound = () => {
                 style={{ fontSize: '14px', padding: '5px 13px', borderRadius: '10px' }}
                 onClick={() => navigate('/')}
               >
-                Bosh sahifaga qaytish
+                {t('notfound.home', 'Bosh sahifaga qaytish')}
               </Button>
             </Link>
           }

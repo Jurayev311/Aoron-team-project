@@ -3,11 +3,14 @@ import logo from '../../assets/logo.svg'
 import cart from '../../assets/cart.svg'
 import { Link, NavLink } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
+import i18n from '../../i18n'; // yoki i18n joylashgan joyga qarab yo'lni to'g'rilang
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef()
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +38,26 @@ const Header = () => {
     }
   }, [menuOpen])
 
+  // Tilni o'zgartirishda orqa fonni o'zgartirish uchun funksiyani yaratamiz
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('i18nextLng', lang); // Tilni localStoragega saqlash
+    document.body.classList.remove('bg-uz', 'bg-ru', 'bg-en'); // Barcha tilga tegishli fonlarni o'chirish
+    if (lang === 'uz') {
+      document.body.classList.add('bg-uz'); // O'zbek tiliga mos fon
+    } else if (lang === 'ru') {
+      document.body.classList.add('bg-ru'); // Rus tiliga mos fon
+    } else if (lang === 'en') {
+      document.body.classList.add('bg-en'); // Ingliz tiliga mos fon
+    }
+  };
+
+  useEffect(() => {
+    // Sahifa yuklanganda saqlangan tilni tekshirish va orqa fonni yangilash
+    const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
+    handleLanguageChange(savedLanguage); // Tilni o'zgartirish va fonni qo'shish
+  }, []);
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/50 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
       <div className='kontainer'>
@@ -50,19 +73,34 @@ const Header = () => {
           </div>
 
           <ul className='hidden md:flex items-center justify-center gap-[32px] text-[15px] font-normal'>
-            <li className='hover:text-gray-500'><NavLink to={'/'}>Home</NavLink></li>
-            <li className='hover:text-gray-500'><NavLink to={'/catalog'}>Catalog</NavLink></li>
-            <li className='hover:text-gray-500'><NavLink to={'/about'}>About</NavLink></li>
-            <li className='hover:text-gray-500'><NavLink to={'/news'}>News</NavLink></li>
-            <li className='hover:text-gray-500'><NavLink to={'/contact'}>Contact</NavLink></li>
+            <li className='hover:text-gray-500'><NavLink to={'/'}>{t('home.home', 'Home')}</NavLink></li>
+            <li className='hover:text-gray-500'><NavLink to={'/catalog'}>{t('footer.shop', 'Catalog')}</NavLink></li>
+            <li className='hover:text-gray-500'><NavLink to={'/about'}>{t('footer.about', 'About')}</NavLink></li>
+            <li className='hover:text-gray-500'><NavLink to={'/news'}>{t('news.latest', 'News')}</NavLink></li>
+            <li className='hover:text-gray-500'><NavLink to={'/contact'}>{t('footer.contact', 'Contact')}</NavLink></li>
           </ul>
 
           <div className='hidden md:flex items-center gap-3.5 text-[13px]'>
-            <span className="bg-black text-white px-2 py-0.5 rounded cursor-pointer">EN</span>
-            <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">RU</span>
-            <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">DE</span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'en' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('en')}
+            >
+              EN
+            </span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'ru' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('ru')}
+            >
+              RU
+            </span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'uz' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('uz')}
+            >
+              UZ
+            </span>
             <NavLink to={'/cart'}>
-              <img src={cart} alt="cart save icon" />
+              <img src={cart} alt="cart icon" />
             </NavLink>
           </div>
         </nav>
@@ -71,17 +109,32 @@ const Header = () => {
       {menuOpen && (
         <div ref={menuRef} className="md:hidden fixed top-[75px] left-0 w-full bg-white shadow-md z-50 px-6 py-4">
           <ul className="flex flex-col gap-4 text-[16px] font-medium">
-            <li><NavLink onClick={() => setMenuOpen(false)} to={'/'}>Home</NavLink></li>
-            <li><NavLink onClick={() => setMenuOpen(false)} to={'/catalog'}>Catalog</NavLink></li>
-            <li><NavLink onClick={() => setMenuOpen(false)} to={'/about'}>About</NavLink></li>
-            <li><NavLink onClick={() => setMenuOpen(false)} to={'/news'}>News</NavLink></li>
-            <li><NavLink onClick={() => setMenuOpen(false)} to={'/contact'}>Contact</NavLink></li>
+            <li><NavLink onClick={() => setMenuOpen(false)} to={'/'}>{t('home.home', 'Home')}</NavLink></li>
+            <li><NavLink onClick={() => setMenuOpen(false)} to={'/catalog'}>{t('footer.shop', 'Catalog')}</NavLink></li>
+            <li><NavLink onClick={() => setMenuOpen(false)} to={'/about'}>{t('footer.about', 'About')}</NavLink></li>
+            <li><NavLink onClick={() => setMenuOpen(false)} to={'/news'}>{t('news.latest', 'News')}</NavLink></li>
+            <li><NavLink onClick={() => setMenuOpen(false)} to={'/contact'}>{t('footer.contact', 'Contact')}</NavLink></li>
           </ul>
 
           <div className="flex items-center gap-3 mt-4 text-sm">
-            <span className="bg-black text-white px-2 py-0.5 rounded cursor-pointer">EN</span>
-            <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">RU</span>
-            <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">DE</span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'en' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('en')}
+            >
+              EN
+            </span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'ru' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('ru')}
+            >
+              RU
+            </span>
+            <span 
+              className={`px-2 py-0.5 rounded cursor-pointer ${i18n.language === 'uz' ? 'bg-black text-white' : 'hover:bg-gray-100'}`} 
+              onClick={() => handleLanguageChange('uz')}
+            >
+              UZ
+            </span>
             <NavLink to={'/cart'}>
               <img src={cart} alt="cart icon" className='w-[18px] h-[18px]' />
             </NavLink>
@@ -92,4 +145,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

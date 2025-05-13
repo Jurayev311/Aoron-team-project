@@ -1,0 +1,119 @@
+{
+  "footer": {
+    "brandText": "Mukammal materiallar va ideal moslikka ega premium sifatli erkaklar kiyimi.",
+    "shop": "Katalog",
+    "viewAll": "Barcha mahsulotlar",
+    "tshirts": "Futbolkalar",
+    "shorts": "Shortiklar",
+    "suits": "Kostyumlar",
+    "company": "KOMPANIYA",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa",
+    "privacy": "Maxfiylik siyosati",
+    "delivery": "Yetkazib berish shartlari",
+    "subscribe": "YANGILIKLARGA OBUNA BO'LING",
+    "subscribeText": "Yangilanishlar, maxsus takliflar va boshqalar uchun obuna bo'ling.",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "email": "Email"
+  },
+  "home": {
+    "season": "Bahor/Yoz 2025",
+    "premium": "Premium erkaklar kiyimi",
+    "quality": "Sifatli matolar. Ideal moslik. Doimiy uslub.",
+    "explore": "Kolleksiyani ko‘rish",
+    "featured": "Tavsiya etilgan mahsulotlar",
+    "featuredDesc": "Eng yaxshi materiallardan tayyorlangan, diqqat bilan tanlangan premium erkaklar kiyimlarimiz to‘plamini kashf eting.",
+    "newArrivals": "Yangi kelganlar"
+  },
+  "contact": {
+    "title": "Biz bilan bog‘laning",
+    "subtitle": "Mahsulotlarimiz yoki xizmatlarimiz bo‘yicha savollaringiz bo‘lsa, biz bilan bog‘laning.",
+    "info": "Aloqa ma'lumotlari",
+    "email": "Email",
+    "phone": "Telefon",
+    "address": "Manzil",
+    "form": "Aloqa shakli",
+    "name": "Ism",
+    "message": "Xabar",
+    "send": "Xabar yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar muvaffaqiyatli yuborildi!",
+    "faq": "Ko‘p so‘raladigan savollar",
+    "faqError": "Ko‘p so‘raladigan savollar topilmadi yoki mavjud emas."
+  },
+  "news": {
+    "latest": "Yangi",
+    "stayUpdated": "So‘nggi yangiliklarimiz va yangilanishlarimizdan xabardor bo‘ling.",
+    "back": "Orqaga"
+  },
+  "cart": {
+    "title": "Savat",
+    "empty": "Savatingiz bo‘sh",
+    "emptyDesc": "Savatga hali hech narsa qo‘shmagansiz.",
+    "continue": "Xaridni davom ettirish"
+  },
+  "notfound": {
+    "subtitle": "Kechirasiz, siz izlagan sahifa mavjud emas.",
+    "home": "Bosh sahifaga qaytish"
+  },
+  "about": {
+    "title": "AORON haqida",
+    "desc": "AORON — B2B hamkorlik uchun zamonaviy, sifatli va raqobatbardosh kiyimlar ishlab chiqaruvchi brend. 1991-yildan buyon faoliyat yuritamiz va erkaklar hamda ayollar kiyimini yaratishga ixtisoslashganmiz. Biz ulgurji, chakana tarmoqlar va brendlar hamda butiklar uchun buyurtmalarni amalga oshiramiz.",
+    "directionsTitle": "Bugun biz ikki yo‘nalishda rivojlanamiz:",
+    "directions": [
+      "Prince — vaqt va sifat bilan isbotlangan klassik erkaklar kostyumlari liniyasi;",
+      "AORON — zamonaviy brend, kengaytirilgan assortiment: kundalik kiyimlardan aksessuar va poyabzalgacha."
+    ],
+    "productionTitle": "Ishlab chiqarish quvvatlari",
+    "productionDesc": "Kompaniyamiz 4 kishilik jamoa bilan boshlangan va bugungi kunda 100 dan ortiq xodim ishlaydi. 2025-yil yozida yangi fabrikani ishga tushiramiz — ishlab chiqarishni kengaytirish imkoniyati: 500 xodim va oyiga 5000+ dona mahsulot.",
+    "offerTitle": "Biz taklif qilamiz:",
+    "offer": [
+      "Barqaror hajm va yetkazib berish muddati",
+      "Har bosqichda sifat nazorati",
+      "Private label ostida ishlash moslashuvchanligi",
+      "B2B mijozlarga individual yondashuv"
+    ],
+    "whyTitle": "Nega bizni tanlashadi",
+    "why": [
+      "O‘zbekiston bozorida 30 yildan ortiq tajriba",
+      "Dizayndan qadoqlashgacha to‘liq ishlab chiqarish sikli",
+      "Brendingiz uchun kolleksiya yaratish imkoniyati",
+      "Dunyo trendlaridan ilhomlangan zamonaviy modellar",
+      "Distribyutorlar, marketpleyslar va do‘konlar uchun qulay shartlar"
+    ],
+    "assortmentTitle": "2025 yangi assortiment",
+    "assortmentSubtitle": "Erkaklar va ayollar futbolkalari, ko‘ylaklari, shortiklari",
+    "assortment": [
+      "Erkaklar va ayollar futbolkalari, ko‘ylaklari, shortiklari",
+      "Poyabzal, sumka, kamar, aksessuarlar",
+      "Individual tikuv",
+      "Sizning talabingizga binoan hamkorlik va kapsul kolleksiyalar"
+    ],
+    "readyTitle": "Hamkorlikka tayyormiz",
+    "readyDesc": "Biz quyidagilar bilan hamkorlikka ochiqmiz:",
+    "ready": [
+      "ulgurji xaridorlar",
+      "kiyim do‘konlari",
+      "marketpleyslar",
+      "xalqaro xaridorlar",
+      "o‘z nomi ostida kolleksiya ishlab chiqarishni istagan brendlar"
+    ],
+    "contact": "📞 Katalog va namunalar olish uchun biz bilan bog‘laning",
+    "missionTitle": "Bizning missiyamiz",
+    "missionDesc": "Erkaklarni eng yaxshi ko‘rinishga va o‘zini yaxshi his qilishga ilhomlantiruvchi, sifat, barqarorlik va etik qadriyatlarga sodiq bo‘lgan ajoyib erkaklar kiyimini yaratish.",
+    "valuesTitle": "Qadriyatlarimiz",
+    "card1": {
+      "title": "Sifat birinchi o‘rinda",
+      "subtitle": "Biz sifatdan hech qachon voz kechmaymiz. Matodan tikuvgacha — har bir element mukammallik uchun tanlanadi."
+    },
+    "card2": {
+      "title": "Barqarorlik",
+      "subtitle": "Atrof-muhitga ta’sirni kamaytirish uchun mas’uliyatli manbalar va barqaror amaliyotlarni qo‘llaymiz."
+    },
+    "card3": {
+      "title": "Innovatsiya",
+      "subtitle": "Biz zamonaviy va dolzarb mahsulotlar uchun yangi g‘oya va texnologiyalarni joriy qilamiz."
+    },
+    "teamTitle": "Jamoamiz"
+  }
+}

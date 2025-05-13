@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spin, Empty } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ProductsCatalog = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -11,6 +12,7 @@ const ProductsCatalog = () => {
   const [colors, setColors] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
+  const { t } = useTranslation();
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -79,9 +81,9 @@ const ProductsCatalog = () => {
     <div className='block'>
       <div className="w-full py-10 bg-gray-100">
         <div className="text-center mx-auto w-[90%] md:w-[35%]">
-          <h1 className="md:text-3xl text-2xl md:font-bold font-medium">Our Collection</h1>
+          <h1 className="md:text-3xl text-2xl md:font-bold font-medium">{t('home.premium') || "Our Collection"}</h1>
           <p className="md:text-[16px] text-[12px] font-normal mt-5 text-gray-500">
-            Browse our collection of premium menswear, designed with quality and style in mind.
+            {t('home.quality') || "Browse our collection of premium menswear, designed with quality and style in mind."}
           </p>
         </div>
       </div>
@@ -89,7 +91,7 @@ const ProductsCatalog = () => {
       <div className='flex flex-col md:flex-row gap-10 px-4 md:px-0 mx-auto max-w-[1240px] py-10'>
         <div className="md:w-1/4 space-y-6">
           <div>
-            <h2 className="font-semibold text-lg mb-2">Categories</h2>
+            <h2 className="font-semibold text-lg mb-2">{t('footer.shop') || "Categories"}</h2>
             <div className="space-y-1">
               {/* Category buttons */}
               {categories.map((category) => (
@@ -105,7 +107,7 @@ const ProductsCatalog = () => {
           </div>
 
           <div>
-            <h2 className="font-semibold text-lg mb-2">Sizes</h2>
+            <h2 className="font-semibold text-lg mb-2">{t('footer.suits') || "Sizes"}</h2>
             <div className="flex flex-wrap gap-2">
               {sizes.map((size) => (
                 <button
@@ -120,7 +122,7 @@ const ProductsCatalog = () => {
           </div>
 
           <div>
-            <h2 className="font-semibold text-lg mb-2">Colors</h2>
+            <h2 className="font-semibold text-lg mb-2">{t('footer.tshirts') || "Colors"}</h2>
             <div className="flex flex-wrap gap-2">
               {colors.map((color) => (
                 <button
@@ -135,7 +137,9 @@ const ProductsCatalog = () => {
             </div>
           </div>
 
-          <button onClick={clearFilters} className="text-red-500 text-sm underline mt-4 cursor-pointer">Clear filters</button>
+          <button onClick={clearFilters} className="text-red-500 text-sm underline mt-4 cursor-pointer">
+            {t('cart.empty') || "Clear filters"}
+          </button>
         </div>
 
         <div className="md:w-3/4">
@@ -145,7 +149,7 @@ const ProductsCatalog = () => {
             </div>
           ) : filteredProducts.length === 0 ? (
             <div className="flex items-center justify-center h-64 w-full">
-              <Empty description="No products available" />
+              <Empty description={t('cart.emptyDesc') || "No products available"} />
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
