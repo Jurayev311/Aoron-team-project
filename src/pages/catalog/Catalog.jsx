@@ -1,8 +1,11 @@
 import React from 'react'
+import ProductsCatalog from '../../components/catalogComponent'
 
 const Catalog = () => {
   return (
-    <div className='pt-[100px]'>Catalog</div>
+    <div className='pt-[100px]'>
+      <ProductsCatalog/>
+    </div>
   )
 }
 
