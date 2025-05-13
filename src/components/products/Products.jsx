@@ -30,13 +30,13 @@ const Products = () => {
           <Spin size="large" />
         </div>
       ) : (
-        <div className="p-6">
+        <div className="p-4 md:p-6 lg:p-8">
           {data?.length === 0 ? (
             <div className="flex items-center justify-center h-64">
               <Empty description="No products available" />
             </div>
           ) : (
-            <div className="kontainer grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="kontainer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {data.map((item, index) => (
                 <div
                   key={index}
@@ -47,7 +47,7 @@ const Products = () => {
                       <img
                         src={`https://testaoron.limsa.uz/${item?.images}`}
                         alt={item?.title_en}
-                        className="w-full h-[424px] object-contain mb-3 hover:scale-[180%] duration-75 cursor-pointer"
+                        className="w-full h-[300px] md:h-[350px] lg:h-[424px] object-contain mb-3 hover:scale-[180%] duration-75 cursor-pointer"
                       />
                     </Link>
                   </div>

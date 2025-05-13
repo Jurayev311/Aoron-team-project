@@ -58,7 +58,7 @@ const Header = () => {
           </ul>
 
           <div className='hidden md:flex items-center gap-3.5 text-[13px]'>
-            <span className="bg-black text-white px-2 py-0.5 rounded">EN</span>
+            <span className="bg-black text-white px-2 py-0.5 rounded cursor-pointer">EN</span>
             <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">RU</span>
             <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">DE</span>
             <NavLink to={'/cart'}>
@@ -79,7 +79,7 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center gap-3 mt-4 text-sm">
-            <span className="bg-black text-white px-2 py-0.5 rounded">EN</span>
+            <span className="bg-black text-white px-2 py-0.5 rounded cursor-pointer">EN</span>
             <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">RU</span>
             <span className="hover:bg-gray-100 cursor-pointer py-0.5 px-2 rounded">DE</span>
             <NavLink to={'/cart'}>
