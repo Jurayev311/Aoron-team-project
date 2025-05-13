@@ -38,24 +38,22 @@ const Header = () => {
     }
   }, [menuOpen])
 
-  // Tilni o'zgartirishda orqa fonni o'zgartirish uchun funksiyani yaratamiz
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
-    localStorage.setItem('i18nextLng', lang); // Tilni localStoragega saqlash
-    document.body.classList.remove('bg-uz', 'bg-ru', 'bg-en'); // Barcha tilga tegishli fonlarni o'chirish
+    localStorage.setItem('i18nextLng', lang); 
+    document.body.classList.remove('bg-uz', 'bg-ru', 'bg-en'); 
     if (lang === 'uz') {
-      document.body.classList.add('bg-uz'); // O'zbek tiliga mos fon
+      document.body.classList.add('bg-uz');
     } else if (lang === 'ru') {
-      document.body.classList.add('bg-ru'); // Rus tiliga mos fon
+      document.body.classList.add('bg-ru'); 
     } else if (lang === 'en') {
-      document.body.classList.add('bg-en'); // Ingliz tiliga mos fon
+      document.body.classList.add('bg-en'); 
     }
   };
 
   useEffect(() => {
-    // Sahifa yuklanganda saqlangan tilni tekshirish va orqa fonni yangilash
     const savedLanguage = localStorage.getItem('i18nextLng') || 'uz';
-    handleLanguageChange(savedLanguage); // Tilni o'zgartirish va fonni qo'shish
+    handleLanguageChange(savedLanguage); 
   }, []);
 
   return (

@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Spin } from 'antd'
 import Products from '../../components/products/Products'
+import { useCart } from '../../context/CartContext'
 
 const ProductDetail = () => {
     const { id } = useParams()
     const [product, setProduct] = useState(null)
     const [error, setError] = useState(null)
     const [quantity, setQuantity] = useState(1)
+    const { addToCart } = useCart();
+    const [selectedSize, setSelectedSize] = useState('');
+    const [selectedColor, setSelectedColor] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -26,6 +30,13 @@ const ProductDetail = () => {
         }
         fetchData()
     }, [id])
+
+    useEffect(() => {
+        if (product) {
+            setSelectedSize(product.sizes[0]?.size || '');
+            setSelectedColor(product.colors[0]?.id || '');
+        }
+    }, [product]);
 
     if (error) return <div className="text-red-500 pt-[100px]">Xatolik: {error}</div>
 
@@ -73,7 +84,11 @@ const ProductDetail = () => {
 
                         <div>
                             <label className="font-medium">Размер:</label>
-                            <select className="ml-2 border border-gray-400 rounded px-2 py-1">
+                            <select
+                                className="ml-2 border border-gray-400 rounded px-2 py-1"
+                                value={selectedSize}
+                                onChange={e => setSelectedSize(e.target.value)}
+                            >
                                 {product.sizes.map((size) => (
                                     <option key={size.id} value={size.size}>
                                         {size.size}
@@ -87,11 +102,18 @@ const ProductDetail = () => {
                             {product.colors.map((color) => (
                                 <div
                                     key={color.id}
-                                    className="w-6 h-6 rounded-full border-none"
-                                    style={{ backgroundColor: color.color_en }}
+                                    className={`w-6 h-6 rounded-full border-2 cursor-pointer flex items-center justify-center ${selectedColor === color.id ? 'border-black' : 'border-transparent'}`}
+                                    style={{ backgroundColor: color.color_en, minWidth: '1.5rem', minHeight: '1.5rem' }}
                                     title={color.color_ru}
-                                />
+                                    onClick={() => setSelectedColor(color.id)}
+                                >
+                                    {selectedColor === color.id && <span className="block w-2 h-2 bg-white rounded-full" />}
+                                </div>
                             ))}
+                            {/* Rang nomini ko'rsatish */}
+                            <span className="ml-2 text-sm text-gray-600">
+                                {product.colors.find(c => c.id === selectedColor)?.color_ru}
+                            </span>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -109,7 +131,13 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-                        <button className="w-full bg-black text-white py-3 rounded-lg text-lg hover:bg-[#1a1a1a] transition cursor-pointer">
+                        <button
+                            className="w-full bg-black text-white py-3 rounded-lg text-lg hover:bg-[#1a1a1a] transition cursor-pointer"
+                            onClick={() => {
+                                const colorObj = product.colors.find(c => c.id === selectedColor);
+                                addToCart(product, quantity, selectedSize, colorObj);
+                            }}
+                        >
                             Add to Cart
                         </button>
 
