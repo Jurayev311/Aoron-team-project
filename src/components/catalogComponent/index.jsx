@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spin, Empty } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsCatalog = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -9,6 +10,7 @@ const ProductsCatalog = () => {
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate=useNavigate()
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -148,7 +150,7 @@ const ProductsCatalog = () => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredProducts.map((item) => (
-                <div key={item.id} className="rounded-lg bg-white shadow-sm p-4 hover:shadow-md transition-shadow">
+                <div key={item.id} onClick={()=>navigate("/ProductDetail ")} className="rounded-lg bg-white shadow-sm p-4 hover:shadow-md transition-shadow">
                   <div className="overflow-hidden rounded-md">
                     <img
                       src={`https://testaoron.limsa.uz/${item?.images}`}
