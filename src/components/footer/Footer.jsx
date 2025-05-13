@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaInstagram, FaFacebook, FaTwitter, FaArrowRight  } from 'react-icons/fa'; // React Icons'dan ikonlarni import qiling
-import logo from '../../assets/footer-logo.svg'; // Logotipni to'g'ri yo'lda joylashtiring
+import { FaInstagram, FaFacebook, FaTwitter, FaArrowRight  } from 'react-icons/fa';
+import logo from '../../assets/footer-logo.svg'; 
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 text-gray-700 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-50 text-gray-700 py-12 px-4 sm:px-6 lg:px-8 mt-[20px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <img src={logo} alt="Aoron Logo" className="mb-4" />
@@ -49,16 +49,16 @@ const Footer = () => {
           <p className="text-sm mb-4">
             Subscribe to receive updates, access to exclusive deals, and more.
           </p>
-          <form className="flex">
+          <form className="flex w-full">
             <input
               type="email"
               placeholder="Email"
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
+              className="flex-grow min-w-0 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
               required
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-black text-white rounded-r-md hover:bg-[#000000da]"
+              className="px-4 py-2 bg-black text-white rounded-r-md hover:bg-[#000000da] flex-shrink-0"
             >
               <FaArrowRight />
             </button>

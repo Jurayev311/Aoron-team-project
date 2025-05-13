@@ -10,7 +10,7 @@ const ProductsCatalog = () => {
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
   const [loading, setLoading] = useState(false);
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -111,7 +111,7 @@ const ProductsCatalog = () => {
                 <button
                   key={size}
                   onClick={() => handleSizeToggle(size)}
-                  className={`border px-3 py-1 rounded-md text-sm ${selectedSizes.includes(size) ? 'bg-black text-white' : ''}`}
+                  className={`border border-gray-400 px-3 py-1 rounded-md text-sm ${selectedSizes.includes(size) ? 'bg-black text-white' : ''}`}
                 >
                   {size}
                 </button>
@@ -126,7 +126,7 @@ const ProductsCatalog = () => {
                 <button
                   key={color}
                   onClick={() => handleColorToggle(color)}
-                  className={`flex items-center gap-2 px-3 py-1 border rounded-md text-sm ${selectedColors.includes(color) ? 'ring-2 ring-black' : ''}`}
+                  className={`flex items-center gap-2 px-3 py-1 border border-gray-400 rounded-md text-sm ${selectedColors.includes(color) ? 'ring-2 ring-black' : ''}`}
                 >
                   <span className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></span>
                   {color}
@@ -150,7 +150,7 @@ const ProductsCatalog = () => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredProducts.map((item) => (
-                <div key={item.id} onClick={()=>navigate("/ProductDetail ")} className="rounded-lg bg-white shadow-sm p-4 hover:shadow-md transition-shadow">
+                <div key={item.id} onClick={() => navigate(`/product/${item.id}`)} className="rounded-lg bg-white p-4 transition-shadow">
                   <div className="overflow-hidden rounded-md">
                     <img
                       src={`https://testaoron.limsa.uz/${item?.images}`}
@@ -158,12 +158,29 @@ const ProductsCatalog = () => {
                       className="w-full h-[300px] object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
-                  <div className="mt-3 space-y-1">
-                    <h3 className="text-md font-semibold">{item?.title_en}</h3>
+                  <div className="space-y-1">
+                    <h3
+                      title={item?.title_en}
+                      className="text-md font-semibold line-clamp-1 h-[24px] cursor-default"
+                    >
+                      {item?.title_en}
+                    </h3>
+
                     <p className="text-green-600 font-bold">${item?.price}</p>
-                    <p className="text-gray-600 text-sm line-clamp-2">{item?.description_en}</p>
-                    <p className="text-gray-500 text-xs">Colors: {item?.colors?.map(c => c.color_en).join(', ')}</p>
-                    <p className="text-gray-500 text-xs">Sizes: {item?.sizes?.map(s => s.size).join(', ')}</p>
+
+                    <p className="text-gray-600 text-sm line-clamp-2 h-[38px]">
+                      {item?.description_en}
+                    </p>
+
+                    <p className="text-gray-500 text-xs">
+                      <span className="font-semibold">Colors:</span>{' '}
+                      {item?.colors?.map(c => c.color_en).join(', ')}
+                    </p>
+
+                    <p className="text-gray-500 text-xs">
+                      <span className="font-semibold">Sizes:</span>{' '}
+                      {item?.sizes?.map(s => s.size).join(', ')}
+                    </p>
                   </div>
                 </div>
               ))}
