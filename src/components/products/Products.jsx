@@ -40,9 +40,9 @@ const Products = () => {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-md p-4 bg-white transition text-start overflow-hidden"
+                  className="rounded-md p-4 bg-white transition text-start overflow-hidden flex flex-col"
                 >
-                  <div className='overflow-hidden'>
+                  <div className="overflow-hidden">
                     <Link to={`/product/${item.id}`}>
                       <img
                         src={`https://testaoron.limsa.uz/${item?.images}`}
@@ -51,16 +51,27 @@ const Products = () => {
                       />
                     </Link>
                   </div>
-                  <div className='flex justify-between'>
-                    <h3 className="text-md font-semibold">{item?.title_en}</h3>
+                  <div className="flex justify-between">
+                    <h3 className="text-md font-semibold truncate">{item?.title_en}</h3>
                     <p className="text-green-600 font-bold">${item?.price}</p>
                   </div>
-                  <p className="text-gray-600 text-sm mt-1 line-clamp-2">
+                  <p className="text-gray-600 text-sm mt-1 line-clamp-2 flex-grow">
                     {item?.description_en}
                   </p>
-                  <p className="text-gray-500 text-sm mt-1">
-                    Colors: {item?.colors?.map((c) => c.color_en).join(', ')}
-                  </p>
+                  <div className="flex mt-1">
+                    {item?.colors?.map((c, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          backgroundColor: c.color_en,
+                          width: '12px',
+                          height: '12px',
+                          borderRadius: '50%',
+                          marginRight: '5px',
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
