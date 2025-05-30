@@ -1,0 +1,119 @@
+{
+  "footer": {
+    "brandText": "Premium quality menswear focused on exceptional materials and perfect fit.",
+    "shop": "Catalog",
+    "viewAll": "View All Products",
+    "tshirts": "T-shirts",
+    "shorts": "Shorts",
+    "suits": "Suits",
+    "company": "COMPANY",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "delivery": "Delivery terms",
+    "subscribe": "SUBSCRIBE TO OUR NEWSLETTER",
+    "subscribeText": "Subscribe to receive updates, access to exclusive deals, and more.",
+    "rights": "All rights reserved.",
+    "email": "Email"
+  },
+  "home": {
+    "season": "Spring/Summer 2025",
+    "premium": "Premium Menswear",
+    "quality": "Quality fabrics. Perfect fit. Timeless style.",
+    "explore": "Explore Collection",
+    "featured": "Featured Products",
+    "featuredDesc": "Discover our carefully selected collection of premium menswear, crafted with the finest materials and attention to detail.",
+    "newArrivals": "New Arrivals"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any questions about our products or services.",
+    "info": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "form": "Contact Form",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "faq": "Frequently Asked Questions",
+    "faqError": "Frequently asked questions not found or not available."
+  },
+  "news": {
+    "latest": "New",
+    "stayUpdated": "Stay updated with our latest news and insights.",
+    "back": "Back"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Looks like you haven't added anything to your cart yet.",
+    "continue": "Continue Shopping"
+  },
+  "notfound": {
+    "subtitle": "Sorry, the page you are looking for does not exist.",
+    "home": "Go to Home"
+  },
+  "about": {
+    "title": "About AORON",
+    "desc": "AORON is a manufacturing brand offering stylish, quality and competitive apparel for B2B partnerships. We have been operating since 1991 and specialize in creating men's and women's clothing, focused on wholesale, retail chains and custom orders for brands and boutiques.",
+    "directionsTitle": "Today we develop two directions:",
+    "directions": [
+      "Prince - a classic line of men's suits, proven by time and quality;",
+      "AORON - a modern brand with an expanded assortment: from casual wear to accessories and shoes."
+    ],
+    "productionTitle": "Production facilities",
+    "productionDesc": "Our company started with a team of 4 people and today employs over 100 people. In the summer of 2025, we are launching a new factory with the ability to scale production - up to 500 employees and 5000+ units per month.",
+    "offerTitle": "We offer:",
+    "offer": [
+      "Stable volumes and delivery terms",
+      "Quality control at every stage",
+      "Flexibility to work under private label",
+      "Individual approach to B2B clients"
+    ],
+    "whyTitle": "Why choose us",
+    "why": [
+      "More than 30 years of experience in the market of Uzbekistan",
+      "Full cycle of production - from design to packaging",
+      "Ability to create collections for your brand",
+      "Modern models inspired by global trends",
+      "Favorable conditions for distributors, marketplaces and stores"
+    ],
+    "assortmentTitle": "New assortment 2025",
+    "assortmentSubtitle": "Men's and women's T-shirts, shirts, shorts",
+    "assortment": [
+      "Men's and women's T-shirts, shirts, shorts",
+      "Shoes, bags, belts, accessories",
+      "Custom tailoring",
+      "Collaborations and capsule collections to your specifications"
+    ],
+    "readyTitle": "Ready for cooperation",
+    "readyDesc": "We are open to cooperation with:",
+    "ready": [
+      "wholesale buyers",
+      "clothing stores",
+      "marketplaces",
+      "international buyers",
+      "brands willing to produce collections under their name"
+    ],
+    "contact": "📞 Contact us to get catalog, samples",
+    "missionTitle": "Our Mission",
+    "missionDesc": "To create exceptional menswear that empowers men to look and feel their best, while maintaining a commitment to quality, sustainability, and ethical practices.",
+    "valuesTitle": "Our Values",
+    "card1": {
+      "title": "Quality First",
+      "subtitle": "We never compromise on quality. From fabrics to construction, every element is carefully chosen for excellence."
+    },
+    "card2": {
+      "title": "Sustainability",
+      "subtitle": "We're committed to reducing our environmental impact through responsible sourcing and sustainable practices."
+    },
+    "card3": {
+      "title": "Innovation",
+      "subtitle": "We embrace new ideas and technologies to deliver modern, relevant products."
+    },
+    "teamTitle": "Our Team"
+  }
+}
