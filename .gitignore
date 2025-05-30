@@ -23,3 +23,6 @@ lerna-debug.log*
 *.sln
 *.sw?
 node_modules
+
+uz01.ahost.uz
+uz02.ahost.uz
