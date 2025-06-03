@@ -62,7 +62,7 @@ const Header = () => {
       <div className='kontainer'>
         <nav className='flex items-center justify-between h-[65px]'>
           <Link to={'/'}>
-            <img src={logo} alt="logo image" />
+            <h2 className='text-2xl font-extrabold'>Suit <span className='text-gray-500 font-medium'>Shop</span></h2>
           </Link>
 
           <div className='md:hidden'>
