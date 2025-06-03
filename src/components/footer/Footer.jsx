@@ -11,7 +11,9 @@ const Footer = () => {
     <footer className="bg-gray-50 text-gray-700 py-12 px-4 sm:px-6 lg:px-8 pt-[20px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <img src={logo} alt="Aoron Logo" className="mb-4" />
+          <Link to={'/'}>
+            <h2 className='text-3xl font-extrabold mb-[35px]'>Suit <span className='text-gray-500 font-medium'>Shop</span></h2>
+          </Link>
           <p className="text-sm">
             {t('footer.brandText', 'Premium quality menswear focused on exceptional materials and perfect fit.')}
           </p>
