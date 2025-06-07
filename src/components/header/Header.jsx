@@ -3,7 +3,7 @@ import logo from '../../assets/logo.svg'
 import cart from '../../assets/cart.svg'
 import { Link, NavLink } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
-import i18n from '../../i18n'; // yoki i18n joylashgan joyga qarab yo'lni to'g'rilang
+import i18n from '../../i18n'; 
 import { useTranslation } from 'react-i18next'
 
 const Header = () => {
@@ -106,7 +106,7 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div ref={menuRef} className="md:hidden fixed top-[75px] left-0 w-full bg-white shadow-md z-50 px-6 py-4">
+        <div ref={menuRef} className="md:hidden fixed left-0 w-full bg-white shadow-md z-50 px-6 py-4">
           <ul className="flex flex-col gap-4 text-[16px] font-medium">
             <li><NavLink onClick={() => setMenuOpen(false)} to={'/'}>{t('home.home', 'Home')}</NavLink></li>
             <li><NavLink onClick={() => setMenuOpen(false)} to={'/catalog'}>{t('footer.shop', 'Catalog')}</NavLink></li>
