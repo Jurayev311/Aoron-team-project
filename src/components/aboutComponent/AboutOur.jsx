@@ -3,30 +3,7 @@ import { getTeam, imageUrl } from './Api';
 import { useTranslation } from 'react-i18next';
 
 const AboutAoron = () => {
-    const [teamMembers, setTeamMembers] = useState([]);
-    const [loadingTeam, setLoadingTeam] = useState(true);
-    const [errorTeam, setErrorTeam] = useState(null);
     const { t } = useTranslation();
-
-    useEffect(() => {
-        const fetchTeamData = async () => {
-            try {
-                const data = await getTeam();
-                if (data && data.length > 0) {
-                    setTeamMembers(data);
-                } else {
-                    setErrorTeam("Team data not found or not available.");
-                }
-            } catch (error) {
-                console.error("Error loading team data:", error);
-                setErrorTeam("An error occurred while loading the data: " + error.message);
-            } finally {
-                setLoadingTeam(false);
-            }
-        };
-
-        fetchTeamData();
-    }, []);
 
     return (
         <>
@@ -112,7 +89,7 @@ const AboutAoron = () => {
                     {t('about.missionDesc')}
                 </p>
             </div>
-            <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6">
+            <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 mb-[50px]">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">{t('about.valuesTitle')}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <div className="bg-white p-6 rounded-lg text-center hover:bg-gray-100">
@@ -146,57 +123,6 @@ const AboutAoron = () => {
                     </div>
                 </div>
             </div>
-            {loadingTeam ? (
-                <div className="flex justify-center items-center py-10">
-                    <div className="flex space-x-3">
-                        <div
-                            className="w-5 h-5 bg-gray-500 rounded-full animate-pulse-custom"
-                            style={{ animationDelay: '0s' }}
-                        ></div>
-                        <div
-                            className="w-5 h-5 bg-gray-500 rounded-full animate-pulse-custom"
-                            style={{ animationDelay: '0.2s' }}
-                        ></div>
-                        <div
-                            className="w-5 h-5 bg-gray-500 rounded-full animate-pulse-custom"
-                            style={{ animationDelay: '0.4s' }}
-                        ></div>
-                    </div>
-                </div>
-            ) : errorTeam ? (
-                <div className="text-center py-10 text-red-500">{errorTeam}</div>
-            ) : teamMembers.length > 0 ? (
-                <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">{t('about.teamTitle')}</h2>
-                    <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-10">
-                        {teamMembers.map((member) => (
-                            <div key={member.id} className="text-center">
-                                <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mx-auto mb-4">
-                                    {member.image ? (
-                                        <img
-                                            src={`${imageUrl}/${member?.image}`}
-                                            alt={member.full_name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                                            <svg
-                                                className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                            </svg>
-                                        </div>
-                                    )}
-                                </div>
-                                <h3 className="text-lg sm:text-xl font-semibold">{member.full_name}</h3>
-                                <p className="text-gray-600 text-sm sm:text-base">{member.position_en}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ) : null}
         </>
     );
 };
